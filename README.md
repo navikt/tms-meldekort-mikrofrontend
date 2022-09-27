@@ -1,22 +1,6 @@
-# meldekort-mikrofrontend-vitets
+# Meldekort-mikrofrontend
 
-Kan brukes som utgangspunkt for å opprette nye mikrofrontends i Min Side.
-
-# Features
-
-- vite-plugin-mock
-- vitest
-- @navikt/ds-css
-- @navikt/ds-react
-- precommit linting med a11y og react
-
-# Tilpass repo-et
-
-1. Søk etter og erstatt meldekort-mikrofrontend med det som skal være navnet på den nye appen.
-2. Sett riktig port i server/server.js, Dockerfile og nais.yaml.
-3. Sett riktig namespace og team i nais manifestene, de ligger i mappen under `nais/<cluster>`
-4. Sett opp secrets, som default er det lagt opp til at secrets kan hentes fra `<appnavn>-secrets`
-5. Velg riktig ingress til appen i nais.yaml
+Mikrofrontend som hentes inn i Min Side.
 
 # Kom i gang
 

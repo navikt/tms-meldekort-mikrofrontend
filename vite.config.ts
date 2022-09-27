@@ -17,8 +17,6 @@ const imports = {
   "react-dom": reactDomUrl,
 };
 
-const getEnvironmentOpts = () => ({});
-
 export default ({ command }: ConfigEnv): UserConfigExport => ({
   plugins: [
     react(),

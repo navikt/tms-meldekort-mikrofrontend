@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import useSwr from "swr";
 import { fetcher } from "../../api/api";
 import { IntlShape, useIntl } from "react-intl";
 import { meldekortApiUrl, meldekortUrl } from "../../api/urls";
@@ -29,12 +29,10 @@ export interface MeldekortData {
 }
 
 const Meldekort = () => {
-  const { data: meldekort, isLoading } = useQuery<MeldekortData>(meldekortApiUrl, fetcher);
+  const { data: meldekort } = useSwr<MeldekortData>(meldekortApiUrl, fetcher);
   const { formatMessage }: IntlShape = useIntl();
 
-  if (isLoading) {
-    return null;
-  }
+  console.log(meldekort);
 
   const isMeldekortBruker = meldekort?.meldekortbruker;
   const isPendingForInnsending = isMeldekortBruker && meldekort?.nyeMeldekort?.nesteInnsendingAvMeldekort;

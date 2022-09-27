@@ -1,5 +1,5 @@
 {
-  "name": "tms-mikrofrontend-template",
+  "name": "meldekort-mikrofrontend",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
@@ -11,12 +11,14 @@
     "pretty-quick": "pretty-quick --pattern \"**/*.*(ts|tsx)\""
   },
   "dependencies": {
-    "@navikt/ds-css": "0.12.6",
-    "@navikt/ds-react": "0.14.3-beta.1",
+    "@navikt/ds-css": "1.2.0",
+    "@navikt/ds-react": "1.2.0",
+    "dayjs": "1.11.5",
     "lint-staged": "^13.0.3",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-query": "3.34.7",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-intl": "6.1.1",
+    "react-query": "3.39.2",
     "rollup-plugin-terser": "7.0.2",
     "vite-plugin-css-injected-by-js": "1.4.0"
   },

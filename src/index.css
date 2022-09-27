@@ -4,7 +4,20 @@ body {
 }
 
 body {
-  background-color: #1f1d2e;
+  background-color: var(--navds-semantic-color-canvas-background);
   color: #575279;
   font-family: sans-serif;
+}
+
+.main {
+  height: auto;
+  min-height: 100%;
+}
+
+.app {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }

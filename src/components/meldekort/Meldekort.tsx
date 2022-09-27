@@ -83,6 +83,8 @@ const Meldekort = () => {
               : "meldekort.send",
         })
       : "";
+  console.log("pending: " + isPendingForInnsending);
+  console.log("ready: " + isReadyForInnsending);
 
   if (isPendingForInnsending) {
     return (

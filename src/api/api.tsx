@@ -7,6 +7,6 @@ export const fetcher = async (path: string) => {
   if (!response.ok) {
     throw new Error("Fetch request failed");
   }
-  const data = await response.json();
-  return await data;
+
+  return await response.json();
 };

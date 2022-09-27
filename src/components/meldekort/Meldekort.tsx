@@ -6,8 +6,30 @@ import { formatDateMonth, formatDayAndMonth, numberToWord } from "../../language
 import Beskjed from "../varsler/beskjed/Beskjed";
 import Oppgave from "../varsler/oppgave/Oppgave";
 
+interface NesteMeldekort {
+  fra: string;
+  kanSendesFra: string;
+  risikererTrekk: boolean;
+  sisteDatoForTrekk: string;
+  til: string;
+  uke: string;
+}
+
+interface NyeMeldekort {
+  antallNyeMeldekort: number;
+  nesteInnsendingAvMeldekort: string;
+  nesteMeldekort: NesteMeldekort | null;
+}
+
+export interface MeldekortData {
+  etterregistrerteMeldekort?: number;
+  meldekortbruker: boolean;
+  nyeMeldekort: NyeMeldekort | null;
+  resterendeFeriedager: number;
+}
+
 const Meldekort = () => {
-  const { data: meldekort, isLoading } = useQuery(meldekortApiUrl, fetcher);
+  const { data: meldekort, isLoading } = useQuery<MeldekortData>(meldekortApiUrl, fetcher);
   const { formatMessage }: IntlShape = useIntl();
 
   if (isLoading) {
@@ -16,7 +38,8 @@ const Meldekort = () => {
 
   const isMeldekortBruker = meldekort?.meldekortbruker;
   const isPendingForInnsending = isMeldekortBruker && meldekort?.nyeMeldekort?.nesteInnsendingAvMeldekort;
-  const isReadyForInnsending = isMeldekortBruker && meldekort?.nyeMeldekort?.antallNyeMeldekort > 0;
+  const isReadyForInnsending =
+    isMeldekortBruker && meldekort?.nyeMeldekort?.antallNyeMeldekort && meldekort.nyeMeldekort.antallNyeMeldekort > 0;
 
   const fremtidig = meldekort?.nyeMeldekort?.nesteInnsendingAvMeldekort
     ? formatMessage(
@@ -53,10 +76,13 @@ const Meldekort = () => {
   const overskrift = isReadyForInnsending ? fremtidig + melding + trekk + advarsel : fremtidig + advarsel;
 
   const feriedager =
-    meldekort?.resterendeFeriedager > 0
+    meldekort?.resterendeFeriedager && meldekort.resterendeFeriedager > 0
       ? formatMessage({ id: "meldekort.feriedager" }, { feriedager: meldekort?.resterendeFeriedager }) +
         formatMessage({
-          id: meldekort?.nyeMeldekort?.antallNyeMeldekort > 1 ? "meldekort.se.oversikt" : "meldekort.send",
+          id:
+            meldekort?.nyeMeldekort?.antallNyeMeldekort && meldekort.nyeMeldekort.antallNyeMeldekort > 1
+              ? "meldekort.se.oversikt"
+              : "meldekort.send",
         })
       : "";
 

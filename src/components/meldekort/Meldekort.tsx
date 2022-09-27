@@ -21,7 +21,7 @@ interface NyeMeldekort {
   nesteMeldekort: NesteMeldekort | null;
 }
 
-export interface MeldekortData {
+interface MeldekortData {
   etterregistrerteMeldekort?: number;
   meldekortbruker: boolean;
   nyeMeldekort: NyeMeldekort | null;

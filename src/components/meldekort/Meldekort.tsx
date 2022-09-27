@@ -32,8 +32,6 @@ const Meldekort = () => {
   const { data: meldekort, error } = useSwr<MeldekortData>(meldekortApiUrl, fetcher);
   const { formatMessage }: IntlShape = useIntl();
 
-  console.log(meldekort);
-
   if (!error && !meldekort) {
     return null;
   }
@@ -87,8 +85,6 @@ const Meldekort = () => {
               : "meldekort.send",
         })
       : "";
-  console.log("pending: " + isPendingForInnsending);
-  console.log("ready: " + isReadyForInnsending);
 
   if (isPendingForInnsending) {
     return (

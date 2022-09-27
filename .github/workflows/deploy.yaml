@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - "main"
-      - "bump-vite"
+      - "swr"
 env:
   "IMAGE": "ghcr.io/${{ github.repository }}/meldekort-mikrofrontend-vitets:${{ github.sha }}"
 jobs:

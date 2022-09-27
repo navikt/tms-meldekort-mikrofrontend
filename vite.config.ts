@@ -5,6 +5,7 @@ import { ConfigEnv } from "vite";
 import { UserConfigExport } from "vitest/config";
 import { rollupImportMapPlugin } from "rollup-plugin-import-map";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
+import EnvironmentPlugin from "vite-plugin-environment";
 import { terser } from "rollup-plugin-terser";
 import { resolve } from "path";
 
@@ -30,6 +31,9 @@ export default ({ command }: ConfigEnv): UserConfigExport => ({
       enforce: "pre",
       apply: "build",
     },
+    EnvironmentPlugin({
+      NODE_ENV: process.env.NODE_ENV || "development",
+    }),
   ],
   build: {
     lib: {

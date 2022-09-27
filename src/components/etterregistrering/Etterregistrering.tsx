@@ -6,8 +6,12 @@ import { numberToWord } from "../../language/i18";
 import useSwr from "swr";
 
 const Etterregistrering = () => {
-  const { data: meldekort } = useSwr(meldekortApiUrl, fetcher);
+  const { data: meldekort, error } = useSwr(meldekortApiUrl, fetcher);
   const { formatMessage } = useIntl();
+
+  if (!error && !meldekort) {
+    return null;
+  }
 
   const tekst = formatMessage(
     { id: "meldekort.etterregistreringer" },

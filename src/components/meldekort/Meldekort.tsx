@@ -29,10 +29,14 @@ export interface MeldekortData {
 }
 
 const Meldekort = () => {
-  const { data: meldekort } = useSwr<MeldekortData>(meldekortApiUrl, fetcher);
+  const { data: meldekort, error } = useSwr<MeldekortData>(meldekortApiUrl, fetcher);
   const { formatMessage }: IntlShape = useIntl();
 
   console.log(meldekort);
+
+  if (!error && !meldekort) {
+    return null;
+  }
 
   const isMeldekortBruker = meldekort?.meldekortbruker;
   const isPendingForInnsending = isMeldekortBruker && meldekort?.nyeMeldekort?.nesteInnsendingAvMeldekort;

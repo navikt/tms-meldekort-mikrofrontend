@@ -1,4 +1,4 @@
-# tms-mikrofrontend-template-vitets
+# meldekort-mikrofrontend-vitets
 
 Kan brukes som utgangspunkt for å opprette nye mikrofrontends i Min Side.
 
@@ -12,7 +12,7 @@ Kan brukes som utgangspunkt for å opprette nye mikrofrontends i Min Side.
 
 # Tilpass repo-et
 
-1. Søk etter og erstatt tms-mikrofrontend-template med det som skal være navnet på den nye appen.
+1. Søk etter og erstatt meldekort-mikrofrontend med det som skal være navnet på den nye appen.
 2. Sett riktig port i server/server.js, Dockerfile og nais.yaml.
 3. Sett riktig namespace og team i nais manifestene, de ligger i mappen under `nais/<cluster>`
 4. Sett opp secrets, som default er det lagt opp til at secrets kan hentes fra `<appnavn>-secrets`
@@ -20,7 +20,7 @@ Kan brukes som utgangspunkt for å opprette nye mikrofrontends i Min Side.
 
 # Kom i gang
 
-1. Bygg tms-mikrofrontend-template ved å kjøre npm run build
+1. Bygg meldekort-mikrofrontend ved å kjøre npm run build
 2. Start appen lokalt ved å kjøre npm run dev
 3. Appen nås på http://localhost:3000
 

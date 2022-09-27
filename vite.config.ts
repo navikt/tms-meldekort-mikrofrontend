@@ -34,7 +34,7 @@ export default ({ command }: ConfigEnv): UserConfigExport => ({
   build: {
     lib: {
       entry: resolve(__dirname, "src/Mikrofrontend.tsx"),
-      name: "tms-mikrofrontend-template",
+      name: "meldekort-mikrofrontend",
       formats: ["es"],
       fileName: () => `bundle.js`,
     },

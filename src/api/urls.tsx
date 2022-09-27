@@ -22,15 +22,15 @@ const MELDEKORT_API_URL: EnvUrl = {
 };
 
 const MELDEKORT_URL: EnvUrl = {
-  local: "http://localhost:3000/...",
-  development: "https://www.dev.nav.no/...",
-  production: "https://www.nav.no/...",
+  local: "http://localhost:3000/meldekort",
+  development: "https://www.dev.nav.no/meldekort",
+  production: "https://www.nav.no/meldekort",
 };
 
 const ETTERREGISTRERING_MELDEKORT_URL: EnvUrl = {
-  local: "http://localhost:3000/...",
-  development: "https://www.dev.nav.no/...",
-  production: "https://www.nav.no/...",
+  local: "http://localhost:3000/meldekort",
+  development: "https://www.dev.nav.no/meldekort/etterregistrer-meldekort",
+  production: "https://www.nav.no/meldekort/etterregistrer-meldekort",
 };
 
 export const meldekortUrl = MELDEKORT_URL[getEnvironment()];

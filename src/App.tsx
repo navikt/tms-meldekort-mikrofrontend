@@ -1,19 +1,16 @@
-import { useQuery } from "react-query";
-import { fetcher } from "./api/api";
-import { apiUrl } from "./api/urls";
-import Komponent from "./components/Komponent";
+import Meldekort from "./components/meldekort/Meldekort";
+import Etterregistrering from "./components/etterregistrering/Etterregistrering";
 import "@navikt/ds-css";
 import "./App.css";
 
 function App() {
-  const { data } = useQuery(apiUrl, fetcher);
-
   return (
-    <main className="main">
-      <div className="app">
-        <Komponent tekst={data?.tekst} />
-      </div>
-    </main>
+    <div className="meldekort">
+      <ul className="varsler">
+        <Meldekort />
+        <Etterregistrering />
+      </ul>
+    </div>
   );
 }
 

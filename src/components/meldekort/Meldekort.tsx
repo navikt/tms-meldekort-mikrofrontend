@@ -2,8 +2,8 @@ import useSwr from "swr";
 import { fetcher } from "../../api/api";
 import { IntlShape, useIntl } from "react-intl";
 import { meldekortApiUrl, meldekortUrl } from "../../api/urls";
-import { MeldekortData } from "../../types/MeldekortType";
 import { formatDateMonth, formatDayAndMonth, numberToWord } from "../../language/i18";
+import { MeldekortData } from "../../types/MeldekortType";
 import Beskjed from "../varsler/beskjed/Beskjed";
 import Oppgave from "../varsler/oppgave/Oppgave";
 
@@ -66,19 +66,11 @@ const Meldekort = () => {
       : "";
 
   if (isPendingForInnsending) {
-    return (
-      <li key={"meldekort-varsel"}>
-        <Beskjed tekst={overskrift} dato={feriedager} href={meldekortUrl} id="meldekort-notifikasjon" />
-      </li>
-    );
+    return <Beskjed tekst={overskrift} dato={feriedager} href={meldekortUrl} id="meldekort-notifikasjon" />;
   }
 
   if (isReadyForInnsending) {
-    return (
-      <li key={"meldekort-varsel"}>
-        <Oppgave tekst={overskrift} dato={feriedager} href={meldekortUrl} id="meldekort-notifikasjon" />
-      </li>
-    );
+    return <Oppgave tekst={overskrift} dato={feriedager} href={meldekortUrl} id="meldekort-notifikasjon" />;
   }
 
   return null;

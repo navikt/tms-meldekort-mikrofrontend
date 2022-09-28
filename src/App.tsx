@@ -5,10 +5,14 @@ import "./App.css";
 
 function App() {
   return (
-    <ul className="varsler">
-      <Meldekort />
-      <Etterregistrering />
-    </ul>
+    <>
+      <li className="varsel" key="meldekort-varsel">
+        <Meldekort />
+      </li>
+      <li className="varsel" key="meldekort-etterregistrering-varsel">
+        <Etterregistrering />
+      </li>
+    </>
   );
 }
 

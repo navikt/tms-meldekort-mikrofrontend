@@ -2,31 +2,10 @@ import useSwr from "swr";
 import { fetcher } from "../../api/api";
 import { IntlShape, useIntl } from "react-intl";
 import { meldekortApiUrl, meldekortUrl } from "../../api/urls";
+import { MeldekortData } from "../../types/MeldekortType";
 import { formatDateMonth, formatDayAndMonth, numberToWord } from "../../language/i18";
 import Beskjed from "../varsler/beskjed/Beskjed";
 import Oppgave from "../varsler/oppgave/Oppgave";
-
-interface NesteMeldekort {
-  fra: string;
-  kanSendesFra: string;
-  risikererTrekk: boolean;
-  sisteDatoForTrekk: string;
-  til: string;
-  uke: string;
-}
-
-interface NyeMeldekort {
-  antallNyeMeldekort: number;
-  nesteInnsendingAvMeldekort: string;
-  nesteMeldekort: NesteMeldekort | null;
-}
-
-interface MeldekortData {
-  etterregistrerteMeldekort?: number;
-  meldekortbruker: boolean;
-  nyeMeldekort: NyeMeldekort | null;
-  resterendeFeriedager: number;
-}
 
 const Meldekort = () => {
   const { data: meldekort, error } = useSwr<MeldekortData>(meldekortApiUrl, fetcher);

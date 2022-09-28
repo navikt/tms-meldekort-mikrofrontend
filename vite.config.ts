@@ -9,12 +9,9 @@ import EnvironmentPlugin from "vite-plugin-environment";
 import { terser } from "rollup-plugin-terser";
 import { resolve } from "path";
 
-const reactUrl = "https://www.nav.no/tms-min-side-assets/react/18/esm/index.js";
-const reactDomUrl = "https://www.nav.no/tms-min-side-assets/react/18/esm/index.js";
-
 const imports = {
-  react: reactUrl,
-  "react-dom": reactDomUrl,
+  react: "https://www.nav.no/tms-min-side-assets/react/18/esm/index.js",
+  "react-dom": "https://www.nav.no/tms-min-side-assets/react/18/esm/index.js",
 };
 
 export default ({ command }: ConfigEnv): UserConfigExport => ({

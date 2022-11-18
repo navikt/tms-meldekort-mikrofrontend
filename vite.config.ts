@@ -10,6 +10,7 @@ import { terser } from "rollup-plugin-terser";
 import { resolve } from "path";
 
 const imports = {
+  swr: "https://www.nav.no/tms-min-side-assets/swr/1/esm/index.js",
   react: "https://www.nav.no/tms-min-side-assets/react/18/esm/index.js",
   "react-dom": "https://www.nav.no/tms-min-side-assets/react/18/esm/index.js",
 };

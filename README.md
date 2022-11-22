@@ -6,7 +6,7 @@ Mikrofrontend som hentes inn i Min Side.
 
 1. Bygg meldekort-mikrofrontend ved å kjøre npm run build
 2. Start appen lokalt ved å kjøre npm run dev
-3. Appen nås på http://localhost:5173
+3. Appen nås på http://localhost:3000
 
 # Henvendelser
 

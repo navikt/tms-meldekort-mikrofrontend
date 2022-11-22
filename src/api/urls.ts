@@ -16,19 +16,19 @@ export const getEnvironment = (): "production" | "development" | "local" => {
 type EnvUrl = { local: string; development: string; production: string };
 
 const MELDEKORT_API_URL: EnvUrl = {
-  local: "http://localhost:5173/api/meldekortinfo",
+  local: "http://localhost:3000/api/meldekortinfo",
   development: "https://www.dev.nav.no/dittnav-api/meldekortinfo",
   production: "https://www.nav.no/dittnav-api/meldekortinfo",
 };
 
 const MELDEKORT_URL: EnvUrl = {
-  local: "http://localhost:5173/meldekort",
+  local: "http://localhost:3000/meldekort",
   development: "https://www.dev.nav.no/meldekort",
   production: "https://www.nav.no/meldekort",
 };
 
 const ETTERREGISTRERING_MELDEKORT_URL: EnvUrl = {
-  local: "http://localhost:5173/meldekort",
+  local: "http://localhost:3000/meldekort",
   development: "https://www.dev.nav.no/meldekort/etterregistrer-meldekort",
   production: "https://www.nav.no/meldekort/etterregistrer-meldekort",
 };

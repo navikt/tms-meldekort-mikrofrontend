@@ -5,7 +5,7 @@ on:
       - "main"
       - "dev-*"
 env:
-  "IMAGE": "ghcr.io/${{ github.repository }}/tms-min-side:${{ github.sha }}"
+  "IMAGE": "ghcr.io/${{ github.repository }}/tms-meldekort-mikrofrontend:${{ github.sha }}"
 jobs:
   build:
     name: "build"
@@ -23,7 +23,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
       - name: "Build application"
-        run: "npm run build:prod"
+        run: "npm run build"
       - name: "Build and publish Docker image"
         run:
           "docker build --pull --tag ${IMAGE} . && echo $GITHUB_TOKEN | docker login\
@@ -43,6 +43,7 @@ jobs:
           CLUSTER: dev-gcp
           RESOURCE: nais/dev-gcp/nais.yaml
   deploy-prod:
+    if: github.ref == 'refs/heads/main'
     runs-on: "ubuntu-latest"
     needs: "build"
     steps:

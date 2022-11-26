@@ -11,19 +11,19 @@ spec:
   image: {{ image }}
   port: 7800
   liveness:
-    path: /meldekort-mikrofrontend/internal/isAlive
+    path: /tms-meldekort-mikrofrontend/internal/isAlive
     initialDelay: 10
   readiness:
-    path: /meldekort-mikrofrontend/internal/isReady
+    path: /tms-meldekort-mikrofrontend/internal/isReady
     initialDelay: 10
   prometheus:
     enabled: true
-    path: /meldekort-mikrofrontend/internal/metrics
+    path: /tms-meldekort-mikrofrontend/internal/metrics
   replicas:
     min: 2
     max: 4
   ingresses:
-    - "https://person.nav.no/meldekort-mikrofrontend"
+    - "https://person.nav.no/tms-meldekort-mikrofrontend"
   resources:
     limits:
       cpu: "3"

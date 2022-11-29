@@ -26,7 +26,7 @@ function App() {
   const [isPendingForInnsending, isReadyForInnsending] = meldekortState(meldekort);
 
   return (
-    <section className="meldekort">
+    <section className={styles.meldekort}>
       <Heading size="medium" spacing>
         {formatMessage({ id: "meldekort.tittel" })}
       </Heading>

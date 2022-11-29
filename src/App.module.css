@@ -1,3 +1,6 @@
+.meldekort {
+  margin-bottom: var(--navds-spacing-8);
+}
 .tittel {
   margin-bottom: 2rem;
 }

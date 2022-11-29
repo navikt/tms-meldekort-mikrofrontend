@@ -1,18 +1,41 @@
-import Meldekort from "./components/meldekort/Meldekort";
-import Etterregistrering from "./components/etterregistrering/Etterregistrering";
+import useSwr from "swr";
+import { Heading } from "@navikt/ds-react";
+import { IntlShape, useIntl } from "react-intl";
+import { MeldekortData } from "./types/MeldekortType";
+import { meldekortApiUrl } from "./api/urls";
+import { meldekortState } from "./domain/meldekortState";
+import { fetcher } from "./api/api";
+import MeldekortEtterregistrering from "./domain/meldekort-etterregistrering/MeldekortEtterregistrering";
+import MeldekortPending from "./domain/meldekort-pending/MeldekortPending";
+import MeldekortReady from "./domain/meldekort-ready/MeldekortReady";
+import styles from "./App.module.css";
 import "@navikt/ds-css";
-import "./App.css";
 
 function App() {
+  const { data: meldekort, error } = useSwr<MeldekortData>(meldekortApiUrl, fetcher);
+  const { formatMessage }: IntlShape = useIntl();
+
+  if (!meldekort) {
+    return null;
+  }
+
+  if (error) {
+    throw Error("Klarte ikke å hente meldekortdata");
+  }
+
+  const [isPendingForInnsending, isReadyForInnsending] = meldekortState(meldekort);
+
   return (
-    <>
-      <li className="varsel" key="meldekort-varsel">
-        <Meldekort />
-      </li>
-      <li className="varsel" key="meldekort-etterregistrering-varsel">
-        <Etterregistrering />
-      </li>
-    </>
+    <section className="meldekort">
+      <Heading size="medium" spacing>
+        {formatMessage({ id: "meldekort.tittel" })}
+      </Heading>
+      <div className={styles.container}>
+        <MeldekortEtterregistrering meldekort={meldekort} />
+        {isPendingForInnsending ? <MeldekortPending meldekort={meldekort} /> : null}
+        {isReadyForInnsending ? <MeldekortReady meldekort={meldekort} /> : null}
+      </div>
+    </section>
   );
 }
 

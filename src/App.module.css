@@ -1,0 +1,21 @@
+.tittel {
+  margin-bottom: 2rem;
+}
+
+.container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 0px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 648px) {
+  .container {
+    flex-direction: row;
+  }
+}

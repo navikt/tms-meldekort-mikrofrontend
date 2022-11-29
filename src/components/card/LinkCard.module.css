@@ -1,0 +1,28 @@
+.linkcard {
+  flex: 0 0 48%;
+  height: 150px;
+}
+
+.linkpanel {
+  height: 100%;
+}
+
+.ready .linkpanel {
+  height: auto;
+}
+
+.tekst {
+  font-size: 18px !important;
+  font-weight: bolder !important;
+  margin-bottom: 0 !important;
+  text-decoration: none !important;
+  color: #272727 !important;
+  line-height: normal !important;
+  padding-bottom: var(--navds-spacing-1);
+}
+
+.dato {
+  font-size: 16px !important;
+  padding-bottom: 12px;
+  color: #707070;
+}

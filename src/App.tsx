@@ -23,6 +23,10 @@ function App() {
     throw Error("Klarte ikke å hente meldekortdata");
   }
 
+  if (!meldekort.meldekortbruker) {
+    return null;
+  }
+
   const [isPendingForInnsending, isReadyForInnsending] = meldekortState(meldekort);
 
   return (

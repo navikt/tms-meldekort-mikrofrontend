@@ -12,5 +12,5 @@
   "meldekort.etterregistreringer.label": "Du må sende {etterregistreringer} meldekort.",
   "meldekort.ett": "Uke {next}",
   "meldekort.send": "Send meldekort ",
-  "meldekort.info.om.trekk": "(Siste innsendingsfrist før trekk: {dato}) "
+  "meldekort.info.om.trekk": "Siste innsendingsfrist før trekk: {dato}"
 }

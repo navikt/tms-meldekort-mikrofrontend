@@ -2,7 +2,7 @@ import { MeldekortData } from "../../types/MeldekortType";
 import { formatDayAndMonth, numberToWord } from "../../language/i18";
 import { IntlShape, useIntl } from "react-intl";
 
-export const readyForInnsendingText = (meldekort: MeldekortData) => {
+export const createReadyForInnsendingText = (meldekort: MeldekortData) => {
   const { formatMessage }: IntlShape = useIntl();
 
   return meldekort.nyeMeldekort?.nesteMeldekort
@@ -18,7 +18,7 @@ export const readyForInnsendingText = (meldekort: MeldekortData) => {
     : "";
 };
 
-export const datoLabel = (meldekort: MeldekortData) => {
+export const createDatoLabel = (meldekort: MeldekortData) => {
   const { formatMessage }: IntlShape = useIntl();
 
   return formatMessage(
@@ -29,5 +29,14 @@ export const datoLabel = (meldekort: MeldekortData) => {
       from: formatDayAndMonth(meldekort.nyeMeldekort?.nesteMeldekort?.fra),
       until: formatDayAndMonth(meldekort.nyeMeldekort?.nesteMeldekort?.til),
     }
+  );
+};
+
+export const createRisikererTrekkLabel = (meldekort: MeldekortData) => {
+  const { formatMessage }: IntlShape = useIntl();
+
+  return formatMessage(
+    { id: "meldekort.info.om.trekk" },
+    { dato: formatDayAndMonth(meldekort?.nyeMeldekort?.nesteMeldekort?.sisteDatoForTrekk) }
   );
 };

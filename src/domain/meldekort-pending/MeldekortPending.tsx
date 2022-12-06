@@ -1,7 +1,7 @@
 import { meldekortUrl } from "../../api/urls";
 import { MeldekortData } from "../../types/MeldekortType";
 import { LinkPanel } from "@navikt/ds-react";
-import { pendingForInnsendingText } from "./meldekortPendingText";
+import { createPendingForInnsendingText } from "./meldekortPendingText";
 import LinkCard from "../../components/card/LinkCard";
 import styles from "../../components/card/LinkCard.module.css";
 
@@ -10,7 +10,7 @@ interface Props {
 }
 
 const MeldekortPending = ({ meldekort }: Props) => {
-  const overskrift = pendingForInnsendingText(meldekort);
+  const overskrift = createPendingForInnsendingText(meldekort);
 
   return (
     <LinkCard href={meldekortUrl} ready={true}>

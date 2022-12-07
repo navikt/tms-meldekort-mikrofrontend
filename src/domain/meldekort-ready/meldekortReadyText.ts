@@ -32,7 +32,7 @@ export const createDatoLabel = (meldekort: MeldekortData) => {
   );
 };
 
-export const createRisikererTrekkLabel = (meldekort: MeldekortData) => {
+export const createRisikererTrekkDescription = (meldekort: MeldekortData) => {
   const { formatMessage }: IntlShape = useIntl();
 
   return formatMessage(

@@ -1,23 +1,20 @@
-.linkcard {
-  flex: 0 0 48%;
-  height: 150px;
+#linkcard {
+  flex: 0 0 50%;
+  padding: 16px;
+  border-radius: 8px;
 }
 
-.linkpanel {
-  height: 100%;
+#linkcardChevron {
+  align-self: end;
 }
 
-.ready .linkpanel {
-  height: auto;
+#linkpanel {
+  height: fit-content;
+  border-radius: 8px;
 }
 
-.tekst {
-  font-size: 18px !important;
-  font-weight: bolder !important;
-  margin-bottom: 0 !important;
-  text-decoration: none !important;
-  color: #272727 !important;
-  line-height: normal !important;
+.text {
+  padding-bottom: 12px;
 }
 
 .dato {

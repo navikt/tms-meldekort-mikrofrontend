@@ -1,7 +1,7 @@
 import { meldekortUrl } from "../../api/urls";
 import { MeldekortData } from "../../types/MeldekortType";
-import { LinkPanel } from "@navikt/ds-react";
-import { createDatoLabel, createReadyForInnsendingText, createRisikererTrekkLabel } from "./meldekortReadyText";
+import { BodyShort, LinkPanel } from "@navikt/ds-react";
+import { createDatoLabel, createReadyForInnsendingText, createRisikererTrekkDescription } from "./meldekortReadyText";
 import Label from "../../components/label/Label";
 import LinkCard from "../../components/card/LinkCard";
 import styles from "../../components/card/LinkCard.module.css";
@@ -11,17 +11,17 @@ interface Props {
 }
 
 const MeldekortReady = ({ meldekort }: Props) => {
-  const overskrift = createReadyForInnsendingText(meldekort);
+  const title = createReadyForInnsendingText(meldekort);
   const dato = createDatoLabel(meldekort);
   const risikererTrekk = meldekort.nyeMeldekort?.nesteMeldekort?.risikererTrekk;
-  const risikererTrekkTekst = createRisikererTrekkLabel(meldekort);
+  const risikererTrekkDescription = createRisikererTrekkDescription(meldekort);
 
   return (
     <LinkCard href={meldekortUrl}>
       <>
-        <LinkPanel.Title className={styles.tekst}>{overskrift}</LinkPanel.Title>
+        <BodyShort>{title}</BodyShort>
         <LinkPanel.Description className={styles.dato}>
-          {risikererTrekk ? risikererTrekkTekst : dato}
+          {risikererTrekk ? risikererTrekkDescription : dato}
         </LinkPanel.Description>
         <Label textId="meldekort.label.ready" />
       </>

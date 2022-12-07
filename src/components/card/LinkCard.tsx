@@ -1,21 +1,18 @@
-import { LinkPanel } from "@navikt/ds-react";
+import { Next } from "@navikt/ds-icons";
 import styles from "./LinkCard.module.css";
 import { ReactElement } from "react";
-import "./Overrides.css";
 
 interface Props {
   href: string;
-  ready?: boolean;
   children: ReactElement;
 }
 
-const LinkCard = ({ href, ready, children }: Props) => {
+const LinkCard = ({ href, children }: Props) => {
   return (
-    <div className={`linkcard ${styles.linkcard} ${ready && `ready ${styles.ready}`}`}>
-      <LinkPanel className={styles.linkpanel} href={href} border={false}>
-        {children}
-      </LinkPanel>
-    </div>
+    <a id={styles.linkcard} className={`navds-panel navds-link-panel`} href={href}>
+      <div className="navds-link-panel__content">{children}</div>
+      <Next id={styles.linkcardChevron} className="navds-link-panel__chevron" />
+    </a>
   );
 };
 

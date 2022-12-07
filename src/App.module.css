@@ -1,14 +1,15 @@
 .meldekort {
   margin-bottom: var(--navds-spacing-8);
 }
+
 .tittel {
   margin-bottom: 2rem;
 }
 
 .container {
   display: flex;
+  flex-direction: row;
   gap: 1rem;
-  flex-wrap: wrap;
 }
 
 @media (min-width: 0px) {

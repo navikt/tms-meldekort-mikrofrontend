@@ -12,7 +12,7 @@ export default [
           nesteMeldekort: {
             fra: "2019-09-09",
             kanSendesFra: "2019-09-21",
-            risikererTrekk: true,
+            risikererTrekk: false,
             sisteDatoForTrekk: "2019-09-30",
             til: "2019-09-22",
             uke: "37-38",

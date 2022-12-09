@@ -31,7 +31,7 @@ function App() {
 
   return (
     <section className={styles.meldekort}>
-      <Heading size="medium" spacing>
+      <Heading size="medium" level="2" spacing>
         {formatMessage({ id: "meldekort.tittel" })}
       </Heading>
       <div className={styles.container}>

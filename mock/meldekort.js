@@ -4,7 +4,7 @@ export default [
     method: "get",
     response: () => {
       return {
-        etterregistrerteMeldekort: 1,
+        etterregistrerteMeldekort: 2,
         meldekortbruker: true,
         nyeMeldekort: {
           antallNyeMeldekort: 1,

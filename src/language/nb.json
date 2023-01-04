@@ -1,7 +1,7 @@
 {
   "meldekort.tittel": "Meldekort",
-  "meldekort.dato": "{from} - {until}",
-  "meldekort.label.etterregistrering": "Du må sende meldekort",
+  "meldekort.dato": "Uke {next} ({from} - {until})",
+  "meldekort.label.etterregistrering": "Du må sende {count} meldekort",
   "meldekort.label.ready": "Klart for innsending",
   "meldekort.se.oversikt": "Oversikt over meldekort ",
   "meldekort.trekk": " ",
@@ -10,7 +10,7 @@
   "meldekort.feriedager": "Du har gjenstående {feriedager} feriedager ved dagpenger. ",
   "meldekort.etterregistreringer": "Du har fått vedtak for en periode du ikke har sendt meldekort.",
   "meldekort.etterregistreringer.label": "Du må sende {etterregistreringer} meldekort.",
-  "meldekort.ett": "Uke {next}",
+  "meldekort.ett": "Send inn meldekort",
   "meldekort.send": "Send meldekort ",
-  "meldekort.info.om.trekk": "Siste innsendingsfrist før trekk: {dato}"
+  "meldekort.info.om.trekk": "Siste frist før trekk: {dato}"
 }

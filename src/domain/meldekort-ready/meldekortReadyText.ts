@@ -12,7 +12,6 @@ export const createReadyForInnsendingText = (meldekort: MeldekortData) => {
         },
         {
           count: numberToWord(meldekort.nyeMeldekort?.antallNyeMeldekort),
-          next: meldekort.nyeMeldekort.nesteMeldekort.uke,
         }
       )
     : "";
@@ -21,15 +20,18 @@ export const createReadyForInnsendingText = (meldekort: MeldekortData) => {
 export const createDatoLabel = (meldekort: MeldekortData) => {
   const { formatMessage }: IntlShape = useIntl();
 
-  return formatMessage(
-    {
-      id: "meldekort.dato",
-    },
-    {
-      from: formatDayAndMonth(meldekort.nyeMeldekort?.nesteMeldekort?.fra),
-      until: formatDayAndMonth(meldekort.nyeMeldekort?.nesteMeldekort?.til),
-    }
-  );
+  return meldekort.nyeMeldekort?.nesteMeldekort
+    ? formatMessage(
+        {
+          id: "meldekort.dato",
+        },
+        {
+          from: formatDayAndMonth(meldekort.nyeMeldekort?.nesteMeldekort?.fra),
+          until: formatDayAndMonth(meldekort.nyeMeldekort?.nesteMeldekort?.til),
+          next: meldekort.nyeMeldekort.nesteMeldekort.uke,
+        }
+      )
+    : "";
 };
 
 export const createRisikererTrekkDescription = (meldekort: MeldekortData) => {

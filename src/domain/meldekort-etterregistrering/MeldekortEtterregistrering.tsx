@@ -18,7 +18,7 @@ const MeldekortEtterregistrering = ({ meldekort }: Props) => {
       <LinkCard href={etterregistreringUrl}>
         <>
           <BodyShort className={styles.text}>{title}</BodyShort>
-          <Label textId="meldekort.label.etterregistrering" />
+          <Label textId="meldekort.label.etterregistrering" count={meldekort.etterregistrerteMeldekort} />
         </>
       </LinkCard>
     );

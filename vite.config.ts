@@ -4,6 +4,7 @@ import { viteMockServe } from "vite-plugin-mock";
 import { ConfigEnv } from "vite";
 import { UserConfigExport } from "vitest/config";
 import { rollupImportMapPlugin } from "rollup-plugin-import-map";
+import viteCompression from "vite-plugin-compression";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 import EnvironmentPlugin from "vite-plugin-environment";
 import { terser } from "rollup-plugin-terser";
@@ -19,6 +20,12 @@ export default ({ command }: ConfigEnv): UserConfigExport => ({
     react(),
     terser(),
     cssInjectedByJsPlugin(),
+    viteCompression({
+      algorithm: "gzip",
+    }),
+    viteCompression({
+      algorithm: "brotliCompress",
+    }),
     viteMockServe({
       mockPath: "mock",
       localEnabled: command === "serve",

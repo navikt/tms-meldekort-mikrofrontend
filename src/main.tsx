@@ -5,7 +5,9 @@ import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Mikrofrontend />
+    <main>
+      <Mikrofrontend />
+    </main>
   </React.StrictMode>,
   document.getElementById("root")
 );

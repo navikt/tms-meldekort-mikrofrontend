@@ -6,5 +6,16 @@ body {
 }
 
 body {
-  background-color: var(--a-bg-default);
+  background-color: var(--navds-semantic-color-canvas-background);
+  font-family: sans-serif;
+}
+
+main {
+  margin: auto;
+  max-width: 808px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
 }

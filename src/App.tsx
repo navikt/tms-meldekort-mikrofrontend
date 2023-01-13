@@ -15,6 +15,8 @@ function App() {
   const { data: meldekort, error } = useSwr<MeldekortData>(meldekortApiUrl, fetcher);
   const { formatMessage }: IntlShape = useIntl();
 
+  throw Error("Klarte ikke å hente meldekortdata");
+
   if (!meldekort) {
     return null;
   }

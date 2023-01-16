@@ -11,8 +11,8 @@
     "pretty-quick": "pretty-quick --pattern \"**/*.*(ts|tsx)\""
   },
   "dependencies": {
-    "@navikt/ds-css": "1.2.0",
-    "@navikt/ds-react": "1.2.0",
+    "@navikt/ds-css": "1.5.10",
+    "@navikt/ds-react": "1.5.10",
     "dayjs": "1.11.5",
     "lint-staged": "13.0.3",
     "react": "18.2.0",

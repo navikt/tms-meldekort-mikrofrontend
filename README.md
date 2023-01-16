@@ -1,6 +1,6 @@
 # Meldekort-mikrofrontend
 
-Mikrofrontend som hentes inn i Min Side.
+Mikrofrontend som hentes inn i Min Side. Denne er deprecated, nye endringer gjøres i https://github.com/navikt/meldekort-mikrofrontend
 
 # Kom i gang
 
